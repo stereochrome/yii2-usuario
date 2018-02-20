@@ -68,6 +68,10 @@ class Module extends BaseModule
      * @var bool whether user can remove his account
      */
     public $allowAccountDelete = false;
+        /**
+     * @var bool wether it is allowed for user to change the username
+     */
+    public $allowUsernameChange = true;
     /**
      * @var string the class name of the strategy class to handle user's email change
      */

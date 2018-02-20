@@ -54,7 +54,9 @@ $module = Yii::$app->getModule('user');
 
                 <?= $form->field($model, 'email') ?>
 
-                <?= $form->field($model, 'username') ?>
+                <?php if($module->allowUsernameChange): ?>
+                    <?= $form->field($model, 'username') ?>
+                <?php endif; ?>
 
                 <?= $form->field($model, 'new_password')->passwordInput() ?>
 

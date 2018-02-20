@@ -145,7 +145,9 @@ class SettingsForm extends Model
             $user = $this->getUser();
             if ($user instanceof User) {
                 $user->scenario = 'settings';
-                $user->username = $this->username;
+                if($this->getModule()->allowUsernameChange) {
+                    $user->username = $this->username;
+                }
                 $user->password = $this->new_password;
                 if ($this->email === $user->email && $user->unconfirmed_email !== null) {
                     $user->unconfirmed_email = null;
